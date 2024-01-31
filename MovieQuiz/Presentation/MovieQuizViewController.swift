@@ -1,17 +1,21 @@
 import UIKit
 
 final class MovieQuizViewController: UIViewController {
+    // MARK: - Lifecycle
     
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var textLabel: UILabel!
     @IBOutlet private var counterLabel: UILabel!
     
-    @IBAction private func yesButtonClicked(_ sender: UIButton) {
+    
+    @IBAction private func yesBottonClicked(_ sender: UIButton) {
         let currentQuestion = questions[currentQuestionIndex]
         let givenAnswer = true
         
         showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
     }
+    
+    
     @IBAction private func noButtonClicked(_ sender: UIButton) {
         let currentQuestion = questions[currentQuestionIndex]
         let givenAnswer = false
@@ -21,12 +25,6 @@ final class MovieQuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        show(quiz: QuizStepViewModel(
-            image: UIImage(),
-            question: "123",
-            questionNumber: "12")
-        )
     }
     
     struct ViewModel {
