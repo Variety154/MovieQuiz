@@ -3,36 +3,6 @@ import UIKit
 final class MovieQuizViewController: UIViewController {
     // MARK: - Lifecycle
     
-    @IBOutlet private var imageView: UIImageView!
-    @IBOutlet private var textLabel: UILabel!
-    @IBOutlet private var counterLabel: UILabel!
-    
-    
-    @IBAction private func yesBottonClicked(_ sender: UIButton) {
-        let currentQuestion = questions[currentQuestionIndex]
-        let givenAnswer = true
-        
-        showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
-    }
-    
-    
-    @IBAction private func noButtonClicked(_ sender: UIButton) {
-        let currentQuestion = questions[currentQuestionIndex]
-        let givenAnswer = false
-        
-        showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        imageView.layer.cornerRadius = 20
-        imageView.layer.masksToBounds = true
-        currentQuestionIndex = -1
-        showNextQuestionOrResults()
-        
-    }
-    
     struct ViewModel {
         let image: UIImage
         let question: String
@@ -56,6 +26,29 @@ final class MovieQuizViewController: UIViewController {
         let text: String
         let buttonText: String
     }
+    
+    @IBOutlet private var imageView: UIImageView!
+    @IBOutlet private var textLabel: UILabel!
+    @IBOutlet private var counterLabel: UILabel!
+    
+    
+    @IBAction private func yesBottonClicked(_ sender: UIButton) {
+        let currentQuestion = questions[currentQuestionIndex]
+        let givenAnswer = true
+        
+        showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
+    }
+    
+    
+    @IBAction private func noButtonClicked(_ sender: UIButton) {
+        let currentQuestion = questions[currentQuestionIndex]
+        let givenAnswer = false
+        
+        showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
+    }
+    
+    private var currentQuestionIndex = 0
+    private var correctAnswers = 0
     
     private let questions: [QuizQuestion] = [
         QuizQuestion(
@@ -100,8 +93,15 @@ final class MovieQuizViewController: UIViewController {
             correctAnswer: false)
     ]
     
-    private var currentQuestionIndex = 0
-    private var correctAnswers = 0
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        imageView.layer.cornerRadius = 20
+        imageView.layer.masksToBounds = true
+        currentQuestionIndex = -1
+        showNextQuestionOrResults()
+    }
     
     
     private func convert(model: QuizQuestion) -> QuizStepViewModel {
