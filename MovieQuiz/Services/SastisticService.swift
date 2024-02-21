@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class StatisticServiceImplementaton: StatisticService {
+final class StatisticServiceImplementation: StatisticService {
     private let userDefaults = UserDefaults.standard
     
     private enum Keys: String {
@@ -41,7 +41,6 @@ final class StatisticServiceImplementaton: StatisticService {
         }
         set {
             guard let data = try? JSONEncoder().encode(newValue) else {
-                print("Невозможно сохранить результат")
                 return
             }
             userDefaults.set(data, forKey: Keys.bestGame.rawValue)

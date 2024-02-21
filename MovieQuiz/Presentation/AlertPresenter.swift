@@ -9,7 +9,7 @@ import Foundation
 
 import UIKit
 
-final class AlertPresenter: AlertPresenterProtocol {
+class AlertPresenter: AlertPresenterProtocol {
     
     weak var delegate: AlertPresenterDelegate?
     
@@ -26,6 +26,7 @@ final class AlertPresenter: AlertPresenterProtocol {
                 alertModel.buttonAction?()
             })
         alert.addAction(action)
+        alert.view.accessibilityIdentifier = "Alert"
         delegate?.show(alert: alert)
     }
     init(delegate: AlertPresenterDelegate?) {

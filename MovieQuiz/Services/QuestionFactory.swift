@@ -22,10 +22,10 @@ final class QuestionFactory: QuestionFactoryProtocol {
                             self.delegate?.didFailToLoadData(with: NetworkError.apiKeyError)
                         }
                             
-                        self.movies = mostPopularMovies.items // сохраняем фильм в нашу новую переменную
-                        self.delegate?.didLoadDataFromServer() // сообщаем, что данные загрузились
+                        self.movies = mostPopularMovies.items
+                        self.delegate?.didLoadDataFromServer()
                     case .failure(let error):
-                        self.delegate?.didFailToLoadData(with: error) // сообщаем об ошибке нашему MovieQuizViewController
+                        self.delegate?.didFailToLoadData(with: error)
                     }
                 }
             }
