@@ -5,11 +5,9 @@
 //  Created by Varvara Kiseleva on 05.02.2024.
 //
 
-import Foundation
-
 import UIKit
 
-class AlertPresenter: AlertPresenterProtocol {
+final class AlertPresenter: AlertPresenterProtocol {
     
     weak var delegate: AlertPresenterDelegate?
     
@@ -25,10 +23,12 @@ class AlertPresenter: AlertPresenterProtocol {
             handler: { _ in
                 alertModel.buttonAction?()
             })
+        
         alert.addAction(action)
-        alert.view.accessibilityIdentifier = "Alert"
+        alert.view.accessibilityIdentifier = "Этот раунд окончен!"
         delegate?.show(alert: alert)
     }
+    
     init(delegate: AlertPresenterDelegate?) {
         self.delegate = delegate
     }

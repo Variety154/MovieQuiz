@@ -5,7 +5,6 @@
 //  Created by Varvara Kiseleva on 18.02.2024.
 //
 
-import Foundation
 import XCTest
 @testable import MovieQuiz
 
@@ -22,4 +21,5 @@ class ArrayTests: XCTestCase {
         let value = testArray[safe: 3]
         XCTAssertEqual(value, 4)
     }
+    
 }

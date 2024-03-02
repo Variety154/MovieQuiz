@@ -5,10 +5,9 @@
 //  Created by Varvara Kiseleva on 21.02.2024.
 //
 
-import Foundation
+import XCTest
 
 @testable import MovieQuiz
-import XCTest
 
 final class MovieQuizViewControllerMock: MovieQuizViewControllerProtocol {
     func show(quiz step: QuizStepViewModel) {

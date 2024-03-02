@@ -38,6 +38,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="1/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IpQ-R0-SlO" userLabel="Index Label">
                                                 <rect key="frame" x="338" y="0.0" width="36" height="23.5"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="index"/>
                                                 <fontDescription key="fontDescription" name="YSDisplay-Medium" family="YS Display" pointSize="20"/>
                                                 <color key="textColor" name="YP White"/>
                                                 <nil key="highlightedColor"/>
@@ -70,7 +71,7 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="YSDisplay-Medium" family="YS Display" pointSize="20"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Нет">
+                                                <state key="normal" title="нет">
                                                     <color key="titleColor" name="YP Black"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -129,8 +130,10 @@
                         <outlet property="ActivityIndicator" destination="fTF-Cu-3Ya" id="UkU-Y6-QSI"/>
                         <outlet property="counterLabel" destination="IpQ-R0-SlO" id="jnT-O8-lVk"/>
                         <outlet property="imageView" destination="DRG-FD-HWz" id="VjB-eK-N0X"/>
+                        <outlet property="noButton" destination="cuS-FT-phM" id="kIB-Xm-aCF"/>
                         <outlet property="questionLabel" destination="aft-dr-Kr5" id="Vec-lO-1wR"/>
                         <outlet property="textLabel" destination="aft-dr-Kr5" id="oVe-ZY-vES"/>
+                        <outlet property="yesButton" destination="oVb-Ta-6we" id="BLV-cK-1Gm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

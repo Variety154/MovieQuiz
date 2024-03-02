@@ -35,14 +35,13 @@ final class QuestionFactory: QuestionFactoryProtocol {
         DispatchQueue.global().async {[weak self] in
             guard let self = self else { return }
             let index = (0..<self.movies.count).randomElement() ?? 0
-            
             guard let movie = self.movies[safe: index] else { return }
             
             var imageData = Data()
             
-            do {
+            do{
                 imageData = try Data(contentsOf: movie.resizedImageURL)
-            } catch {
+            }catch{
                 DispatchQueue.main.async{ [weak self] in
                     guard let self = self else { return }
                     self.delegate?.didFailToLoadData(with: NetworkError.imageError)

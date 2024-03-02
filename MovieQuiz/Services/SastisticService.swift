@@ -1,5 +1,5 @@
 //
-//  StstisticService.swift
+//  StatisticSevice.swift
 //  MovieQuiz
 //
 //  Created by Varvara Kiseleva on 06.02.2024.

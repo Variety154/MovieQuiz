@@ -13,10 +13,9 @@ struct ArithmeticOperations {
     
     func subtraction(num1: Int, num2: Int, handler: @escaping (Int) -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            handler(num1 + num2)
+            handler(num1 - num2)
         }
     }
-    
     func multiplication(num1: Int, num2: Int) -> Int {
         return num1 * num2
     }
